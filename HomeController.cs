@@ -44,7 +44,7 @@ namespace PSV01.UI.MVC.Controllers
                 var credential = new NetworkCredential
                 {
                     UserName = "no-reply@brentondev.com",
-                    Password = "Cordinated440@"
+                    Password = "???????????"
                 };
                 smtp.Credentials = credential;
                 smtp.Host = "mail.brentondev.com";
