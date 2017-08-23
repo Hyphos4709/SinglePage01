@@ -1,0 +1,377 @@
+﻿@RenderBody()
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.jsdelivr.net/jquery.ajax.unobtrusive/3.2.4/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<!-- Smooth-scroll -->
+<script src="~/Content/js/smooth-scroll.min.js"></script>
+<!-- "Hi. I'am..." Text type - Resource jQuery -->
+<script src="~/Content/js/main.min.js"></script>
+<!-- Owl Carousel -->
+<script src="~/Content/js/owl.carousel.min.js"></script>
+<!-- Menu Scrolling -->
+<script src="~/Content/js/waypoints.min.js"></script>
+<!-- Portfolio gallery -->
+<script src="~/Content/js/imagelightbox.min.js"></script>
+<!-- Send Email -->
+<script src="~/Content/js/sendemail.js"></script>
+@* THESE SCRIPTS ARE FOR THE WORK HISTORY FUNCTIONALITY *@
+<script>
+    $(document).ready(function () {
+        $("#main-stuff").css("opacity", "1");
+        setTimeout(namePhoto, 1000)
+        setTimeout(namePhoto2, 2900)
+        setTimeout(namePhoto3, 3900)
+        setTimeout(namePhoto4, 4900)
+        setTimeout(namePhoto5, 6700)
+        setTimeout(namePhoto6, 10000)
+        function namePhoto() {
+            $("#top-container").css("margin-top", "200px");
+        }
+        function namePhoto2() {
+            $("#top-container").css("-webkit-transition", "margin-top 1s");
+            $("#top-container").css("margin-top", "-100px");
+            $(".full-download").css("margin-left", "0");
+            $(".dropdown-toggle.circle-main").css("display", "block");
+            $(".dropdown-toggle.circle-main").css("margin-left", "100px");
+        }
+        function namePhoto3() {
+            $(".button-mywall").css("opacity", "1");
+            $("#top-container").css("margin-top", "0");
+            $("h1.name-boss").css("font-size", "100px");
+
+        }
+        function namePhoto4() {
+            $("h2.main-details").css("margin-left", "0");
+            $("h2.main-details").css("margin-right", "0");
+            $("h2.main-details").css("font-size", "50px");
+          
+            $(".navbubble").css("opacity", "1");
+            $(".bubble-text").css("display", "block");
+            $(".coggs").css("display", "block");
+            $(".coggs").css("opacity", "1");
+            $("#engineer").css("margin-left", "100px");
+        }
+        function namePhoto5() {
+
+        }
+
+        function namePhoto6() {
+            $(".navbubble").css("opacity", "0");
+            $(".bubble-text").css("display", "none");
+        }
+    })
+
+</script>
+<script>
+    
+
+    current = '';
+    other1 = '';
+    other2 = '';
+    y = null;
+    z = true;
+    function extend(x) {
+
+
+        if (x != 2 && x != 3) {
+            current = 'centriq';
+            other1 = "midtown";
+            other2 = "tubbys";
+        }
+        if (x != 1 && x != 3) {
+            current = 'midtown';
+            other1 = 'centriq';
+            other2 = 'tubbys';
+        }
+        if (x != 1 && x != 2) {
+            current = 'tubbys';
+            other1 = 'centriq';
+            other2 = 'midtown';
+        }
+
+        //Opens up the click if its the first option
+        if (y == null) {
+            document.getElementById(current).style.height = "25em";
+
+            document.getElementById(current + "1").style.fontSize = "1.35em";
+            $("#" + current + "1").addClass("sizing-1");
+            document.getElementById(current + "2").style.webkitTransform = "rotate(180deg)";
+            document.getElementById(current + "2").style.transform = "rotate(180deg)";
+
+
+
+        }
+        //keeps track of the last call to see if it needs to close the current option.
+        if (y == x) {
+            if (z == false) {
+
+                document.getElementById(current).style.height = "25em";
+
+                document.getElementById(current + "1").style.fontSize = "1.35em";
+                $("#" + current + "1").addClass("sizing-1");
+
+                document.getElementById(current + "2").style.webkitTransform = "rotate(180deg)";
+                document.getElementById(current + "2").style.transform = "rotate(180deg)";
+                z = true;
+            }
+            else {
+                document.getElementById(current).style.height = "7.5em";
+                document.getElementById(current + "1").style.fontSize = "0";
+                $("#" + current + "1").removeClass("sizing-1");
+                document.getElementById(current + "2").style.webkitTransform = "none";
+                document.getElementById(current + "2").style.transform = "none";
+                z = false;
+            }
+
+
+
+        }
+        //if the last selection was not clicked runs normal functionality
+        if (y != x && y != null) {
+            document.getElementById(current).style.height = "25em";
+
+            $("#" + current + "1").addClass("sizing-1");
+            document.getElementById(current + "1").style.fontSize = "1.35em";
+
+            document.getElementById(current + "2").style.webkitTransform = "rotate(180deg)";
+            document.getElementById(current + "2").style.transform = "rotate(180deg)";
+
+        }
+
+        document.getElementById(other1).style.height = "7.5em";
+        document.getElementById(other1 + "1").style.fontSize = "0";
+        $("#" + other1 + "1").removeClass("sizing-1");
+        document.getElementById(other1 + "2").style.webkitTransform = "none";
+        document.getElementById(other1 + "2").style.transform = "none";
+
+        document.getElementById(other2).style.height = "7.5em";
+        document.getElementById(other2 + "1").style.fontSize = "0";
+        $("#" + other2 + "1").removeClass("sizing-1");
+        document.getElementById(other2 + "2").style.webkitTransform = "none";
+        document.getElementById(other2 + "2").style.transform = "none";
+        y = x;
+
+
+    }
+
+</script>
+
+@* FUNCTIONALITY FOR OPENING SIDE NAV *@
+<script>
+    function openNav() {
+        document.getElementById("sideNavPer").style.width = "20%";
+        document.getElementById("sideNavPer").style.borderWidth = "1em";
+        document.getElementById("open-nav").style.display = "none";
+        document.getElementById("main-stuff").style.width = "80%";
+        document.getElementById("main-stuff").style.float = "right";
+        $(".sideNavPer1").css("opacity", "1");
+        $(".coggs").css("left", "58%");
+        //document.getElementById("responsive-social-download").style.marginLeft = "20%";
+        //document.getElementById("dl-id").style.marginRight = "4%";
+        //$(".full-download").css("width", "80%");
+        $(".full-download").css("left", "20%");
+        //document.getElementsByClassName("full-download").style.width = "80%";
+        //document.getElementsByClassName("full-download").style.left = "20%";
+
+
+
+    }
+    function closeNav() {
+        $(".sideNavPer1").css("opacity", "0");
+        document.getElementById("sideNavPer").style.width = "0%";
+        document.getElementById("sideNavPer").style.borderWidth = "0";
+        document.getElementById("open-nav").style.display = "block";
+        document.getElementById("main-stuff").style.width = "100%";
+        $(".coggs").css("left", "48%");
+        document.getElementById("main-stuff").style.float = "none";
+        //document.getElementById("responsive-social-download").style.marginLeft = "14%";
+        //document.getElementById("dl-id").style.marginRight = "7%";
+        //$(".full-download").css("width", "100%");
+        $(".full-download").css("left", "10%");
+        //document.getElementsByClassName("full-download").style.width = "100%";
+        //document.getElementsByClassName("full-download").style.left = "0";
+
+
+    }
+
+
+</script>
+<script type="text/javascript">
+
+    $("#EmailForm").submit(function (e) {
+        e.preventDefault();
+        var formData = $(this).serializeArray();
+
+
+        $.ajax({
+            url: "@Url.Action("Email", "Home")",
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            success: function (result) {
+                $("#successmsg").html("Email Sent!");
+            }
+
+
+        })
+        $("#successmsg").html("Email Sent!");
+        $("#EmailForm")[0].reset();
+
+    })
+
+
+</script>
+<script>
+    var x = '<p style="font-size: 2em">Experience from the field of psychology and the service industry have helped me develop a set of skills that are easily transferable into the tech world. Centriq\'s training program has increased my strengths in all areas of web development. From providing an aesthetic front end environment (that is also user friendly), to making structurally sound databases that can provide a company\'s clients, customers, and even employees with valuable and secure information. Users would then be able to access this information, based on their authority, from any device that has an internet connection. I am able to provide this service efficiently by utilizing experience in teamwork, customer service, and time management.</p>';
+    var y = '<video autoplay><source src="~/Content/img/computer_typing.mp4" type="video/mp4"> Your browser does not support the video tag.  </video>';
+    $("#aboutme-method").click(function () {
+        document.getElementById("alternate").style.display = "block";
+        document.getElementById("alternate2").style.display = "block";
+
+    })
+    $(".cd-intro").hover(function () {
+        //document.getElementById("about").innerHTML = "<h1 class=\"cd-headline letters type\"><span>Core competencies include: </span><span class=\"cd-words-wrapper waiting\"><b class=\"is-visible\">customer service experience.</b><b>problem-soliving ability.</b><b>Project task & time managment</b></span></h1><div id=\"alternate\"><video autoplay><source src=\"~/Content/img/computer_typing.mp4\" type=\"video/mp4\"></video><button onclick=\"aboutMe()\">Stuff</button></div>"
+        //    document.getElementById("text-animation").innerHTML = "<h1 id=\"alternate2\" class=\"cd-headline letters type\" style=\"display:none; height:40%\">" +
+
+        //"<span id=\"top-vid2\" style=\"display: none\">About Me</span>" +
+        //"<span id=\"top-vid\">Core Competencies<br /></span>" +
+
+        //"<span id=\"textilate-js\" class=\"cd-words-wrapper waiting\">" +
+
+        //    "<b class=\"is-visible\">Customer Service.</b>" +
+
+
+        //    "<b>Problem Solving.</b>" +
+        //    "<b>Time Management.</b>" +
+        //    "<b>About Me.</b>" +
+        //"</span>" +
+
+
+        //    "</h1>\"";
+        document.getElementById("alternate").style.display = "block";
+        document.getElementById("alternate2").style.display = "block";
+
+
+    })
+    function blowUp() {
+        document.getElementById("textilate-js").style.display = "none";
+        document.getElementById("top-vid").style.height = "0px";
+        document.getElementById("top-vid").style.padding = "0px";
+        document.getElementById("top-vid").style.borderWidth = "0px";
+        document.getElementById("top-vid2").style.display = "block";
+    }
+    function aboutMe() {
+        document.getElementById("alternate").innerHTML = x;
+        setTimeout(blowUp, 1500);
+    }
+</script>
+<script>
+    function jquery1() {
+        document.getElementById("1.1").style.display = "block";
+        document.getElementById("1").style.display = "none";
+        document.getElementById("sa-nav").style.display = "none";
+    }
+    function jquery3() {
+        document.getElementById("1.1").style.display = "none";
+        document.getElementById("1").style.display = "block";
+        document.getElementById("sa-nav").style.display = "block";
+    }
+    function css1() {
+        document.getElementById("1.2").style.display = "block";
+        document.getElementById("1").style.display = "none";
+        document.getElementById("sa-nav").style.display = "none";
+    }
+    function css2() {
+        document.getElementById("1.2").style.display = "none";
+        document.getElementById("1").style.display = "block";
+        document.getElementById("sa-nav").style.display = "block";
+    }
+    function resp1() {
+        document.getElementById("1.3").style.display = "block";
+        document.getElementById("1").style.display = "none";
+        document.getElementById("sa-nav").style.display = "none";
+    }
+    function resp2() {
+        document.getElementById("1.3").style.display = "none";
+        document.getElementById("1").style.display = "block";
+        document.getElementById("sa-nav").style.display = "block";
+    }
+
+    function jS1() {
+        document.getElementById("1.4").style.display = "block";
+        document.getElementById("1").style.display = "none";
+        document.getElementById("sa-nav").style.display = "none";
+    }
+    function jS2() {
+        document.getElementById("1.4").style.display = "none";
+        document.getElementById("1").style.display = "block";
+        document.getElementById("sa-nav").style.display = "block";
+    }
+
+    function bootStrap1() {
+        document.getElementById("1.5").style.display = "block";
+        document.getElementById("1").style.display = "none";
+        document.getElementById("sa-nav").style.display = "none";
+    }
+    function bootStrap2() {
+        document.getElementById("1.5").style.display = "none";
+        document.getElementById("1").style.display = "block";
+        document.getElementById("sa-nav").style.display = "block";
+    }
+
+    function devTools1() {
+        document.getElementById("1.6").style.display = "block";
+        document.getElementById("1").style.display = "none";
+        document.getElementById("sa-nav").style.display = "none";
+    }
+    function devTools2() {
+        document.getElementById("1.6").style.display = "none";
+        document.getElementById("1").style.display = "block";
+        document.getElementById("sa-nav").style.display = "block";
+    }
+
+
+
+
+
+</script>
+@*<script>
+        jQuery('img.svg').each(function () {
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function (data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if (typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if (typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass + ' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
+    </script>*@
+@* ABOVE IS USED FOR POSSIBLE SVG COLOR CHANGE FOR MIDTOWN PSYCHOLOGY *@
+    </div>
+</body>
+
+</html>
